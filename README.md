@@ -1,16 +1,21 @@
 # 2019-hearthstone-decks
 Analysis of hearthstone decks with Pig. [Sven Reisenegger, Pablo Torres, Patricio Taiba. Group 20]
 
-# Resumen
+# Overview
 
 State what is the main goal of the project. State what sorts of question(s) you want to answer or what sort of system you want to build. (Questions may be non-technical -- e.g., is there a global correlation between coffee consumption and research output -- so long as they require data analysis or other technical solutions.)
 
-Posibles queries:
+Ojo que hay que ver los mazos de play mode (ranked deck, tournament)
+Ideas
+ - Contar mazos ranked con más de X upvotes (mazos buenos)
  - Cartas mas populares (por set y por clase/neutrales), ver si fueron nerfeadas
  - Cartas neutrales mas populares
  - Clases mas populares (por rotacion tal vez)
  - Cartas que son populares juntas (usar como indicador la cantidad de veces que salen juntas/cantidad total de veces que sale cada una sumadas)
- - 
+ - Ver cuantas cartas segun coste hay en cada mazo (ver curva promedio de los mazos)
+ - Comparaciones entre las queries usando todo el dataset vs filtrando por buenos mazos
+ - De cuales cartas se juega solo una copia
+ - Ver clases mas populares con mazos baratos/caros
 
 # Data
 
