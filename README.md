@@ -7,7 +7,7 @@ State what is the main goal of the project. State what sorts of question(s) you 
 
 Ojo que hay que ver los mazos de play mode (ranked deck, tournament)
 Ideas
- - Contar mazos ranked con más de X upvotes (mazos buenos)
+ - Contar mazos ranked con más de 50 upvotes (mazos buenos) 2178
  - Cartas mas populares (por set y por clase/neutrales), ver si fueron nerfeadas
  - Cartas neutrales mas populares
  - Clases mas populares (por rotacion tal vez)
