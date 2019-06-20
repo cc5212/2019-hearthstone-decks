@@ -16,6 +16,7 @@ Ideas
  - Comparaciones entre las queries usando todo el dataset vs filtrando por buenos mazos
  - De cuales cartas se juega solo una copia
  - Ver clases mas populares con mazos baratos/caros
+ - Mazos buenos con la mayor cantidad de cartas de alguna expansión específica.
 
 # Data
 
