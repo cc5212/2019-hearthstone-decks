@@ -17,7 +17,7 @@ Las ideas de consultas interesantes son las siguientes.
  - Comparaciones entre las queries usando todo el dataset vs filtrando por buenos mazos
  - De cuales cartas se juega solo una copia
 
-# Data
+# Datos
 
 El dataset utilizado fue sacado de [Kaggle](https://www.kaggle.com/romainvincent/history-of-hearthstone) consta de 346.242 mazos (filas) de hearthstone en formato csv, cada fila contiene los siguientes datos (descripicón copiada de la página original):
 - date (str) : the date of publication (or last update) of the deck.
@@ -61,9 +61,7 @@ Contains the reference to the cards played in Hearthstone. Each record features 
 
 
 
-# Methods
-
-Detail the methods used during the project. Provide an overview of the techniques/technologies used, why you used them and how you used them. Refer to the source-code delivered with the project. Describe any problems you encountered.
+# Métodos
 
 Para el desarrollo de este proyecto se usó pricipalmente Apache Pig y en menor medida Python. Python fue utilizado para crear scripts que prepocesaran los datos, primero para transformar el archivo refs.json a formato csv, eliminando la información inútil en el proceso,además se usó para eliminar comas que habían en los campos del archivo de mazos, ya que hacían más complicado cargarlos en Pig. 
 
@@ -74,7 +72,6 @@ Para realizar esta última operación se [creó un script](Pig%20scripts/reshape
 En los scripts para [contar buenos mazos](Pig%20scripts/count_good_decks.pig), [contar los arquetipos](Pig%20scripts/ordered_deck_archetype_count.pig) y en las primeras dos consultas para [contar cartas](Pig%20scripts/count_cards.pig) se ve una lógica parecida a la usada en los laboratorios de agrupar y luego contar. Por otro lado en el script para ver los [pares de cartas populares](Pig%20scripts/card_pairs.pig) se usó una lógica similar a la vista en el laboratorio para contar co-estrellas. Por último, en las consultas que entregan [los top 10 por clases y set](Pig%20scripts/count_cards.pig), el script se basó en el ejemplo mostrado en [esta respuesta](https://stackoverflow.com/a/17656762) de Stack Overflow.
 
 # Resultados
-
 
 Los resultados de varias de las consultas se encuenttran en la carpeta [query results](query%20results/). La cantidad de mazos realmente populares no es muy alta en comparación al volumen del dataset, con sólo 2000 mazos con más de 50 upvotes. La clase más popular (con más mazos creados) encontrada fue Mage.
 
