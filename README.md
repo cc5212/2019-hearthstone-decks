@@ -78,7 +78,12 @@ En los scripts para [contar buenos mazos](Pig%20scripts/count_good_decks.pig), [
 Detail the results of the project. Different projects will have different types of results; e.g., run-times or result sizes, evaluation of the methods you're comparing, the interface of the system you've built, and/or some of the results of the data analysis you conducted.
 
 Los resultados de varias de las consultas se encuenttran en la carpeta [query results](query%20results/).
-Para las [cartas más populares]() se ve que efectivamente son las que posteriormente fueron eliminadas de la rotación estándar. Como por ejemplo "Sylvanas Windrunner" o cartas cuyo poder fue disminuido.
+Para las [cartas más populares](query%20results/unique_ordered_card_count.txt) se ve que efectivamente son las que posteriormente fueron eliminadas de la rotación estándar. Como por ejemplo "Sylvanas Windrunner" o cartas cuyo poder fue disminuido como "Defender of Argus" o "Big game Hunter". Lo mismo para las [cartas populares por clase](query%20results/top_10_by_class.txt), por ejemplo en Shaman, "Hex" y "Rockbiter Weapon" o "Power Overwhelming" y "Fiery War Axe" en Warlock y Warrior respectivamente.
+
+Para los [pares de cartas populares](query%20results/card_pairs.tsv) los resultados son más o menos los esperados. Muchas de las combinaciones son simplemente pares de cartas de clase muy buenas que al final se juegan en todos los mazos de dicha clase. Otras combinaciones son efectivamente combinaciones de cartas que tienen sinergia entre si. La más evidente de estas combinaciones es "Feugen" con "Stalagg" que deben ir juntas en un mazo para servir por un tema de diseño.
+
+Los tiempos de ejecución fueron relativamente bajos para la mayoría de las consultas, dentro del orden de los tres o cinco minutos, sin contar los tiempos de espera en el cluster. Esto con la excepción de la consulta por los pares de cartas populares, que requería un join de 10 millones por 10 millones. Esta última consulta tardó aproximadamente media hora en ejecutarse.
+
 
 
 # Conclusiones
