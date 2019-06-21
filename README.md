@@ -8,7 +8,7 @@ State what is the main goal of the project. State what sorts of question(s) you 
 El principal objetivo del proyecto es hacer consultas interesantes o entretenidas al dataset. Parte del objetivo es revisar si las cartas más populares (de hace 2 años) son efectivamente las cartas que percibimos como populares. Por ejemplo, las cartas "Azure Drake", "Sylvanas Windrunner" y "Ragnaros the Firelord" fueron quitadas del set estándar de Hearthstone hace un tiempo. Nos interesa ver si esto fue justificado por los datos o no.
 
 Las ideas de consultas interesantes son las siguientes.
- - Contar mazos ranked con más de 50 upvotes (mazos buenos) 2178
+ - Contar mazos ranked con más de 50 upvotes (mazos buenos)
  - Cartas mas populares (por set y por clase/neutrales), ver si fueron nerfeadas o quitadas de estándar.
  - Cartas neutrales mas populares. 
  - Clases mas populares.
@@ -75,9 +75,9 @@ En los scripts para [contar buenos mazos](Pig%20scripts/count_good_decks.pig), [
 
 # Resultados
 
-Detail the results of the project. Different projects will have different types of results; e.g., run-times or result sizes, evaluation of the methods you're comparing, the interface of the system you've built, and/or some of the results of the data analysis you conducted.
 
-Los resultados de varias de las consultas se encuenttran en la carpeta [query results](query%20results/).
+Los resultados de varias de las consultas se encuenttran en la carpeta [query results](query%20results/). La cantidad de mazos realmente populares no es muy alta en comparación al volumen del dataset, con sólo 2000 mazos con más de 50 upvotes. La clase más popular (con más mazos creados) encontrada fue Mage.
+
 Para las [cartas más populares](query%20results/unique_ordered_card_count.txt) se ve que efectivamente son las que posteriormente fueron eliminadas de la rotación estándar. Como por ejemplo "Sylvanas Windrunner" o cartas cuyo poder fue disminuido como "Defender of Argus" o "Big game Hunter". Lo mismo para las [cartas populares por clase](query%20results/top_10_by_class.txt), por ejemplo en Shaman, "Hex" y "Rockbiter Weapon" o "Power Overwhelming" y "Fiery War Axe" en Warlock y Warrior respectivamente.
 
 Para los [pares de cartas populares](query%20results/card_pairs.tsv) los resultados son más o menos los esperados. Muchas de las combinaciones son simplemente pares de cartas de clase muy buenas que al final se juegan en todos los mazos de dicha clase. Otras combinaciones son efectivamente combinaciones de cartas que tienen sinergia entre si. La más evidente de estas combinaciones es "Feugen" con "Stalagg" que deben ir juntas en un mazo para servir por un tema de diseño.
@@ -90,5 +90,5 @@ Los tiempos de ejecución fueron relativamente bajos para la mayoría de las con
 
 Durante la realización del proyecto se aprendió a hacer consultas complejas a una base de datos alojada en un sistema distribuido usando Pig. La parte fácil del proyecto fue subir los datos al sistema y hacer las primeras consultas (aunque fue difícil detectar que faltaban los punto y comas (;) en un principio).
 La parte más compleja del proyecto fue hacer la consulta por pares de cartas populares, ya que requirió varios pasos para lograr el objetivo deseado.
-Probablemente las consultas se podrían haber hecho de manera más eficiente usando directamente Hadoop Map Reduce o Spark. 
+Probablemente las consultas se podrían haber hecho de manera más eficiente usando directamente Hadoop Map Reduce o Spark. Además habría sido bueno filtrar mejor los datos, para analizar los mazos realmente populares, pero de haber hecho esto nos habríamos quedado con muy pocos datos.
 
