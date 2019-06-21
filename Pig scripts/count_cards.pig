@@ -24,7 +24,7 @@ top10_set = FOREACH grouped_by_set {
 	top = LIMIT sorted 10;
 	GENERATE group, FLATTEN(top); 
 };
-STORE top10_set INTO '/uhadoop2019/hearthstone-decks/top-10-by-set'
+STORE top10_set INTO '/uhadoop2019/hearthstone-decks/top-10-by-set';
 
 grouped_by_class = GROUP cards_with_set_class BY class;
 top10_class = FOREACH grouped_by_class {
@@ -32,4 +32,4 @@ top10_class = FOREACH grouped_by_class {
 	top = LIMIT sorted 10;
 	GENERATE group, FLATTEN(top); 
 };
-STORE top10_class INTO '/uhadoop2019/hearthstone-decks/top-10-by-class'
+STORE top10_class INTO '/uhadoop2019/hearthstone-decks/top-10-by-class';
