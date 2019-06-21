@@ -15,3 +15,5 @@ deck_id, deck_set, deck_type, rating, title, user, FLATTEN(cards) as card;
 
 STORE flatten_cards INTO '/uhadoop2019/hearthstone-decks/expanded_data/';
 
+--Screen: 1639
+--org.apache.pig.Main - Pig script completed in 8 minutes, 26 seconds and 662 milliseconds (506662 ms)

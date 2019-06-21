@@ -9,8 +9,8 @@ Ojo que hay que ver los mazos de play mode (ranked deck, tournament)
 Ideas
  - Contar mazos ranked con más de 50 upvotes (mazos buenos) 2178
  - Cartas mas populares (por set y por clase/neutrales), ver si fueron nerfeadas
- - Cartas neutrales mas populares
- - Clases mas populares (por rotacion tal vez)
+ - Cartas neutrales mas populares 
+ - Clases mas populares (por rotacion tal vez) x
  - Cartas que son populares juntas (usar como indicador la cantidad de veces que salen juntas/cantidad total de veces que sale cada una sumadas)
  - Ver cuantas cartas segun coste hay en cada mazo (ver curva promedio de los mazos)
  - Comparaciones entre las queries usando todo el dataset vs filtrando por buenos mazos
@@ -20,7 +20,29 @@ Ideas
 
 # Data
 
+
 Describe the raw dataset that you considered for your project. Where did it come from? Why was it chosen? What information does it contain? What format was it in? What size was it? How many lines/records? Provide links.
+
+El dataset utilizado consta de 346.242 mazos (filas) de hearthstone, cada fila contiene los siguientes datos:
+- date (str) : the date of publication (or last update) of the deck.
+- user (str) : the user who uploaded the deck.
+- deck_class (str) : one of the nine character class in Hearthstone (Druid, Priest, ...).
+- deck_archetype (str) : the theme of deck labelled by the user (Aggro Druid, Dragon Priest, ...).
+- deck_format (str) : the game format of the deck on the day data was recorded (W for "Wild" or S for "Standard").
+- deck_set (str) : the latest expansion published prior the deck publication (Naxxramas, TGT Launch, ...).
+- deck_id (int) : the ID of the deck.
+- deck_type (str) : the type of the deck labelled by the user :
+  - Ranked Deck : a deck played on ladder.
+  - Theorycraft : a deck built with unreleased cards to get a gist of the future metagame.
+  - PvE Adventure : a deck built to beat the bosses in adventure mode.
+  - Arena : a deck built in arena mode.
+  - Tavern Brawl : a deck built for the weekly tavern brawl mode.
+  - Tournament : a deck brought at tournament by a pro-player.
+  - None : the deck type was not mentioned.
+- rating (int) : the number of upvotes received by that deck.
+- title (str) : the name of the deck.
+- craft_cost (int) : the amount of dust (in-game craft material) required to craft the deck.
+- cards (list) : a list of 30 card ids. Each ID can be mapped to the card description using the reference file.
 
 # Methods
 
