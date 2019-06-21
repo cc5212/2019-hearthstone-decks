@@ -23,7 +23,7 @@ Ideas
 
 Describe the raw dataset that you considered for your project. Where did it come from? Why was it chosen? What information does it contain? What format was it in? What size was it? How many lines/records? Provide links.
 
-El dataset utilizado consta de 346.242 mazos (filas) de hearthstone, cada fila contiene los siguientes datos:
+El dataset utilizado fue sacado de [Kaggle](https://www.kaggle.com/romainvincent/history-of-hearthstone) consta de 346.242 mazos (filas) de hearthstone en formato csv, cada fila contiene los siguientes datos (descripicón copiada de la página original):
 - date (str) : the date of publication (or last update) of the deck.
 - user (str) : the user who uploaded the deck.
 - deck_class (str) : one of the nine character class in Hearthstone (Druid, Priest, ...).
@@ -43,6 +43,27 @@ El dataset utilizado consta de 346.242 mazos (filas) de hearthstone, cada fila c
 - title (str) : the name of the deck.
 - craft_cost (int) : the amount of dust (in-game craft material) required to craft the deck.
 - cards (list) : a list of 30 card ids. Each ID can be mapped to the card description using the reference file.
+
+Además del archivo csv, se tiene refs.json. Se copia la descripición de la página original:
+Contains the reference to the cards played in Hearthstone. Each record features a lot of informations about the cards, I'll list the most important:
+
+- dbfId (int) : the id of the card (the one used in data.json).
+- rarity (str) : the rarity of the card (EPIC, RARE, ...).
+- cardClass (str) : the character class (WARLOCK, PRIEST, ...).
+- artist (str) : the artist behind the card's art.
+- collectible (bool) : whether or not the card can be collected.
+- cost (int) : the card play cost.
+- health (int) : the card health (if it's a minion).
+- attack (int) : the card attack (if it's a minion).
+- name (str) : the card name.
+- flavor (str) : the card's flavor text.
+- set (str) : the set / expansion which featured this card.
+- text (int) : the card's text.
+- type (str) : the card's type (MINION, SPELL, ...).
+- race (str) : the card's race (if it's a minion).
+- set (str) : the set / expansion which featured this card.
+
+
 
 # Methods
 
