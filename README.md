@@ -87,5 +87,6 @@ Los tiempos de ejecución fueron relativamente bajos para la mayoría de las con
 
 Durante la realización del proyecto se aprendió a hacer consultas complejas a una base de datos alojada en un sistema distribuido usando Pig. La parte fácil del proyecto fue subir los datos al sistema y hacer las primeras consultas (aunque fue difícil detectar que faltaban los punto y comas (;) en un principio).
 La parte más compleja del proyecto fue hacer la consulta por pares de cartas populares, ya que requirió varios pasos para lograr el objetivo deseado.
+
 Probablemente las consultas se podrían haber hecho de manera más eficiente usando directamente Hadoop Map Reduce o Spark. Además habría sido bueno filtrar mejor los datos, para analizar los mazos realmente populares, pero de haber hecho esto nos habríamos quedado con muy pocos datos.
 
