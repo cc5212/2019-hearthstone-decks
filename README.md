@@ -5,23 +5,19 @@ Analysis of hearthstone decks with Pig. [Sven Reisenegger, Pablo Torres, Patrici
 
 State what is the main goal of the project. State what sorts of question(s) you want to answer or what sort of system you want to build. (Questions may be non-technical -- e.g., is there a global correlation between coffee consumption and research output -- so long as they require data analysis or other technical solutions.)
 
-Ojo que hay que ver los mazos de play mode (ranked deck, tournament)
-Ideas
+El principal objetivo del proyecto es hacer consultas interesantes o entretenidas al dataset. Parte del objetivo es revisar si las cartas más populares (de hace 2 años) son efectivamente las cartas que percibimos como populares. Por ejemplo, las cartas "Azure Drake", "Sylvanas Windrunner" y "Ragnaros the Firelord" fueron quitadas del set estándar de Hearthstone hace un tiempo. Nos interesa ver si esto fue justificado por los datos o no.
+
+Las ideas de consultas interesantes son las siguientes.
  - Contar mazos ranked con más de 50 upvotes (mazos buenos) 2178
- - Cartas mas populares (por set y por clase/neutrales), ver si fueron nerfeadas
- - Cartas neutrales mas populares 
- - Clases mas populares (por rotacion tal vez) x
+ - Cartas mas populares (por set y por clase/neutrales), ver si fueron nerfeadas o quitadas de estándar.
+ - Cartas neutrales mas populares. 
+ - Clases mas populares.
  - Cartas que son populares juntas (usar como indicador la cantidad de veces que salen juntas/cantidad total de veces que sale cada una sumadas)
  - Ver cuantas cartas segun coste hay en cada mazo (ver curva promedio de los mazos)
  - Comparaciones entre las queries usando todo el dataset vs filtrando por buenos mazos
  - De cuales cartas se juega solo una copia
- - Ver clases mas populares con mazos baratos/caros
- - Mazos buenos con la mayor cantidad de cartas de alguna expansión específica.
 
 # Data
-
-
-Describe the raw dataset that you considered for your project. Where did it come from? Why was it chosen? What information does it contain? What format was it in? What size was it? How many lines/records? Provide links.
 
 El dataset utilizado fue sacado de [Kaggle](https://www.kaggle.com/romainvincent/history-of-hearthstone) consta de 346.242 mazos (filas) de hearthstone en formato csv, cada fila contiene los siguientes datos (descripicón copiada de la página original):
 - date (str) : the date of publication (or last update) of the deck.
@@ -77,14 +73,17 @@ Para realizar esta última operación se [creó un script](Pig%20scripts/reshape
 
 En los scripts para [contar buenos mazos](Pig%20scripts/count_good_decks.pig), [contar los arquetipos](Pig%20scripts/ordered_deck_archetype_count.pig) y en las primeras dos consultas para [contar cartas](Pig%20scripts/count_cards.pig) se ve una lógica parecida a la usada en los laboratorios de agrupar y luego contar. Por otro lado en el script para ver los [pares de cartas populares](Pig%20scripts/card_pairs.pig) se usó una lógica similar a la vista en el laboratorio para contar co-estrellas. Por último, en las consultas que entregan [los top 10 por clases y set](Pig%20scripts/count_cards.pig), el script se basó en el ejemplo mostrado en [esta respuesta](https://stackoverflow.com/a/17656762) de Stack Overflow.
 
-# Results
+# Resultados
 
 Detail the results of the project. Different projects will have different types of results; e.g., run-times or result sizes, evaluation of the methods you're comparing, the interface of the system you've built, and/or some of the results of the data analysis you conducted.
 
-# Conclusion
+Los resultados de varias de las consultas se encuenttran en la carpeta [query results](query%20results/).
+Para las [cartas más populares]() se ve que efectivamente son las que posteriormente fueron eliminadas de la rotación estándar. Como por ejemplo "Sylvanas Windrunner" o cartas cuyo poder fue disminuido.
 
-Summarise main lessons learnt. What was easy? What was difficult? What could have been done better or more efficiently?
 
-# Appendix
+# Conclusiones
 
-You can use this for key code snippets that you don't want to clutter the main text.
+Durante la realización del proyecto se aprendió a hacer consultas complejas a una base de datos alojada en un sistema distribuido usando Pig. La parte fácil del proyecto fue subir los datos al sistema y hacer las primeras consultas (aunque fue difícil detectar que faltaban los punto y comas (;) en un principio).
+La parte más compleja del proyecto fue hacer la consulta por pares de cartas populares, ya que requirió varios pasos para lograr el objetivo deseado.
+Probablemente las consultas se podrían haber hecho de manera más eficiente usando directamente Hadoop Map Reduce o Spark. 
+
