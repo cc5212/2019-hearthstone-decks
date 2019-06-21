@@ -69,6 +69,8 @@ Contains the reference to the cards played in Hearthstone. Each record features 
 
 Detail the methods used during the project. Provide an overview of the techniques/technologies used, why you used them and how you used them. Refer to the source-code delivered with the project. Describe any problems you encountered.
 
+Para el desarrollo de este proyecto se uso pricipalmente Apache Pig y en menor medida Python. Python se uso para prepocesar nuestros datos, primero para transformar el archivo refs.json a formato csv eliminando la información que no nos servía en el proceso, además también se uso para eliminar comas que habían en los campos del archivo de los mazos ya que hacían más complicado cargarlos en Pig. Por otro lado se uso Apache Pig para hacer consultas al dataset para responder las preguntas planteadas, se decidió usar esta tecnología ya que es de fácil uso y es adecuado para usar con el dataset de 346.242 filas que se transforman en 10.387.260 al separar los mazos por cartas.
+
 # Results
 
 Detail the results of the project. Different projects will have different types of results; e.g., run-times or result sizes, evaluation of the methods you're comparing, the interface of the system you've built, and/or some of the results of the data analysis you conducted.
